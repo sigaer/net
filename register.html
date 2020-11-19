@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        form
+        {
+            width=30%;
+            height=500px;
+            margin-top: 0px;
+            margin-left: 550px;
+        }
+            </style>
+        <script>
+            function compare()
+            {
+                var a=document.getElementById('password1').value;
+                var b=document.getElementById('password2').value;
+
+                if(a==b)
+                {
+                    document.getElementById('ts').innerHTML="密码一致!";
+                }
+                else
+                {
+                    document.getElementById('ts').innerHTML="两次密码不一致!";
+                }
+            }
+        </script>
+    <title>Document</title>
+</head>
+<body>
+    <legend align="center">注册信息</legend>
+    <form align="left" action='project1.html' method="POST">
+            <p>昵称:
+            <input type="text" name="username">
+            <p>密码:
+                <input type="password" name="password1" id="password1" onkeyup="compare();">
+                <p>确认密码:
+                    <input type="password" name="password2" id="password2" onkeyup="compare();">
+                    <div id="ts"></div>
+                </p>
+            <p>性别:
+                <input name="xb" type="radio" checked value="男">男
+                <input name="xb" type="radio" value="女">女
+                <p>出生日期:
+                    <input type="text" name="birthday">
+                        <p>邮箱:
+                            <input type="text" name="mail">
+                            <p>手机号码:
+                                <input type="text" name="phone">
+        <p><input type="submit" value="提交"/>
+            <input type="reset" value="重填"/>
+
+</body>
+</html>
