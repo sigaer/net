@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    body{
+        background-image:url("bg/1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed
+    }
+    *{
+        margin:5;
+        padding:0;
+    }
+    .header{
+        background-image:url("miku/6.jpg");
+        background-repeat: no-repeat;
+        background-size: 80% 100px;
+        margin-top:0;
+        margin-left: 10%;
+        margin-right: 100px;
+        width:100%;
+        height: 100px;
+    }
+    .logo{
+        margin-left: 125px;
+        margin-top:30px;
+        width:120px;
+        height:120px;
+        float:left;gz
+    }
+    .rtitle{
+        text-align: center;
+        margin-left:740px;
+        width:200px;
+        height: 40px;
+    }
+    .gz{
+        list-style: none;
+        background-color:#DCDCDC;
+    }
+    .gz ul li{
+        list-style: none;
+        float:left;
+        padding: 5px;
+    }
+    .gz a{
+        text-decoration: none;
+    }
+    .gz a:hover{
+        text-decoration: underline;
+        color:red;
+    }
+    .gz:after {                                            
+				content: "";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+    .knowme{
+        border-bottom:#CCC 1px solid;
+    }
+    .menu{
+        margin-left: 350px;
+        margin-top:45px;
+        padding:5px;
+    }
+    .menu ul li{
+        border: 1px solid red;
+        float:left;
+        list-style: none;
+        font-size: 20px;
+        border-radius:25px;
+        text-align: center;
+        padding: 5px;
+        background: #eee;
+    }
+    .menu ul li a{
+        text-decoration: none;
+        color:darkgreen;
+    }
+    .menu a:hover{
+        text-decoration: underline;
+        background: #f2cdb0;
+        color:#f00;
+    }
+    .menu:after {                                            
+				content: "";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+
+    
+    .lis{
+        list-style: none;
+        float:left;
+        margin-top:20px;
+        margin-left:125px;
+        width: 120px;
+        background-color:#DCDCDC;
+    }
+    .lis ul li{
+        list-style: none;
+    }
+    .lis a{
+        text-decoration: none;
+    }
+    .lis a:hover{
+        text-decoration: underline;
+        color:red;
+    }
+    .center{
+        border:1px solid pink;
+        margin-right: 275px;
+        margin-left: 275px;
+        background-color: #fff;
+        height:470px;
+    }
+    .title{
+        margin:0;
+        border:1px solid red;
+        text-align: center;
+        height: 70px;
+    }
+    .right{
+        float:right;
+        margin-top:20px;
+        margin-right:45px;
+        width:200px;
+        background-color: #CCC;
+    }
+    .righttitle{
+        margin:0;
+        text-align: center;
+        height: 30px;
+    }
+    .right ul li{
+        list-style: none;
+        font-size: 15px;
+        text-align: left;
+        padding: 5px;
+        margin-left: 5px;
+        border-bottom:#CCC 1px solid;
+    }
+    .right ul li a{
+        text-decoration: none;
+    }
+    .right a:hover{
+        text-decoration: underline;
+        color:red;
+    }
+    .news{
+        overflow: scroll;
+        background-color: #fff;
+        height:400px;
+        margin-bottom: 0px;
+    }
+    .news ul li{
+        list-style: none;
+        font-size: 15px;
+        text-align: left;
+        padding: 5px;
+        margin-left: 50px;
+    }
+    .news ul li a{
+        text-decoration: none;
+    }
+    .news a:hover{
+        text-decoration: underline;
+        color:red;
+    }
+    .sprite {
+        display:inline-block;
+        width: 64px;height: 64px;
+        background-image: url("miku/riv.png");
+    }    
+    .sprite.miku{background-position: 0px 0px;}
+    .sprite.meiko {background-position: -64px 0px;}
+    .sprite.luka {background-position: 0px -64px;}
+    .sprite.len {background-position: -64px -64px;}
+    .sprite.rin {background-position: -128px 0;}
+    .sprite.kaito {background-position: -128px -64px;}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Vocaloid小站</h1>
+    </div>
+        <img class="logo" src="miku/4.jpg" alt="0">
+        <div class="rtitle">
+            <div class="knowme">
+                <h3>认识我</h3>
+            </div>
+            <div class="gz">
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">腾讯微博</a></li>
+                    <li><a href="#">QQ</a></li>
+                </ul>
+            </div>
+        </div>
+    <div class="menu">
+        <ul><li><a href="#">首页</a></li>
+            <li><a href="#">关于我</a></li>
+            <li><a href="#">音乐</a></li>
+            <li><a href="#">相册</a></li>
+            <li><a href="#">心情</a></li>
+            <li><a href="#">留言</a></li>
+    </div>
+   
+    <div class="lis">
+        <div class=righttitle>
+            <h5>成员介绍</h5>
+        </div>
+        <ul><li><span class="sprite miku"></span><a href="#">miku</a></li>
+            <li><span class="sprite rin"></span><a href="#">rin</a></li>
+            <li><span class="sprite len"></span><a href="#">len</a></li>
+            <li><span class="sprite luka"></span><a href="#">luka</a></li>
+            <li><span class="sprite kaito"></span><a href="#">kaito</a></li>
+            <li><span class="sprite meiko"></span><a href="#">meiko</a></li>
+        </ul>
+    </div>
+    <div class=right>
+        <div class=righttitle>
+            <h5>站长推荐</h5>
+        </div>
+        <ul>
+            <li>
+                <a href="#">资讯1</a>
+            </li>
+            <li>
+                <a href="#">资讯2</a>
+            </li>
+            <li>
+                <a href="#">资讯3</a>
+            </li>
+            <li>
+                <a href="#">资讯4</a>
+            </li>
+            <li>
+                <a href="#">资讯5</a>
+            </li>
+            <li>
+                <a href="#">资讯6</a>
+            </li>
+            <li>
+                <a href="#">资讯7</a>
+            </li>
+            <li>
+                <a href="#">资讯8</a>
+            </li>
+            <li>
+                <a href="#">资讯9</a>
+            </li>
+            <li>
+                <a href="#">资讯10</a>
+            </li>
+        </ul>
+    </div>
+    <div class=center>
+        <div class=title>
+            <h4>最新资讯</h4>
+        </div>
+        
+       <div class="news">
+        <ul>
+            <li>
+                <a href="#">资讯1</a>
+            </li>
+            <li>
+                <a href="#">资讯2</a>
+            </li>
+            <li>
+                <a href="#">资讯3</a>
+            </li>
+            <li>
+                <a href="#">资讯4</a>
+            </li>
+            <li>
+                <a href="#">资讯5</a>
+            </li>
+            <li>
+                <a href="#">资讯6</a>
+            </li>
+            <li>
+                <a href="#">资讯7</a>
+            </li>
+            <li>
+                <a href="#">资讯8</a>
+            </li>
+            <li>
+                <a href="#">资讯9</a>
+            </li>
+            <li>
+                <a href="#">资讯10</a>
+            </li>
+        </ul>
+       </div>
+    </div>
+</body>
+</html>

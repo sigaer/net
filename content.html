@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="commentCss.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+        html{
+            background-image: url("http://pic.netbian.com/uploads/allimg/180826/113958-153525479855be.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <script>
+        window.onload=function () {
+            var pages=1;
+            var count=1;
+            var flag=0;
+            var idArr=[]
+            var isClick=[];
+            var $page=$(".page");
+            var $bottom1=$(".bottom1");
+            var $bottom2=$(".bottom2");
+            var $submit=$(".submit");
+            var $text1=$(".id");
+            var $text2=$(".input");
+            var $comment=$(".comment");
+            function addCommentToHtml (text1,text2,time,upNum,downNum) {
+	            text1=text1.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+                text2=text2.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+
+                $comment.append("  <li>\n" +
+                        "            <div class=\"com\">\n" +
+                        "                \n" +"<span>"+ text1+"</span>" + "：" + "<br>" +
+                        "                \n" + text2 + "<br>" +
+                        "                <div class=\"time\">\n" +
+                        "                    " + time + "<br>" +
+                        "                </div>\n" +
+                        "                <div class=\"upImg\"></div>\n" +
+                        "                <div class=\"downImg\"></div>\n" +
+                        "                <div class=\"upNum\">" + upNum + "</div>\n" +
+                        "                <div class=\"downNum\">" + downNum + "</div>\n" +
+                        "            </div>\n" +
+                        "        </li>");
+            }
+
+            function clear() {
+                $comment.html("");
+            }
+
+
+            function getComments(start) {
+                idArr = []
+                isClick = []
+                $.ajax({
+                    type : "post",
+                    contentType: "application/json;charset=UTF-8",
+                    url : "/gameComment/get",
+                    data: JSON.stringify({
+                        start: start,
+                        pageSize: 3
+                    }),
+                    success : function(result) {
+                        clear();
+                        $.each(JSON.parse(result),function(idx,obj) {
+                            idArr.push(obj.id)
+                            addCommentToHtml(obj.name, obj.comment, obj.time, obj.upNum, obj.downNum);
+                        });
+                        flag=1;
+                        $bottom2.attr('disabled',false)
+                        $bottom1.attr('disabled',false)
+                    },
+                    error : function(e){
+                        $bottom2.attr('disabled',false)
+                        $bottom1.attr('disabled',false)
+                        alert("服务器繁忙")
+                        window.location.reload()
+                    }
+                });
+            }
+
+            function getPages() {
+                $.ajax({
+                    type:"post",
+	    contentType: "application/json;charset=UTF-8",
+                    url:"/gameComment/pages",
+	    data:"getPages",
+                    success:function (result) {
+                        pages=parseInt(result);
+                        var c=parseInt(pages/3);
+                        if(pages%3!=0){
+                            c++;
+                        }
+                        pages=c;
+                        $page.text(count+"/"+pages);
+                    },
+                    error:function (xhr) {
+                        alert("服务器繁忙");
+                    }
+                })
+            }
+
+            getPages();
+            getComments(0);
+
+            function addComment(name, comment, time, upNum, downNum,text1,text2) {
+                $.ajax({
+                    type:"post",
+                    contentType: "application/json;charset=UTF-8",
+                    url:"/gameComment/add",
+                    data:JSON.stringify({
+                        name:name,
+                        comment:comment,
+                        time:time,
+                        upNum:upNum,
+                        downNum:downNum
+                    }),
+                    success:function (result) {
+                        var number = parseInt(result);
+                        if(number > 0) {
+                            $text1.val("");
+                            $text2.val("");
+                            getPages();
+                            count=1;
+                            getComments(0);
+                        }
+                        else alert("插入失败")
+                        $submit.attr('disabled',false);
+                    },
+                    error:function (e) {
+                        alert("服务器繁忙");
+                        $submit.attr('disabled',false);
+                    }
+                })
+            }
+
+            function change(id,type){
+                $.ajax({
+                    type:"post",
+                    contentType: "application/json;charset=UTF-8",
+                    url:"/gameComment/change",
+                    data:JSON.stringify({
+                            id:id,
+                            type:type
+                    }),
+                    success:function (result) {
+                        var number = parseInt(result);
+                        if(number <= 0){
+                            var $par = $(this).parent("div");
+                            var upNum = $par.children(".upNum");
+                            var num = parseInt(upNum.text());
+                            upNum.text((num - 1) + "");
+                            alert("点赞失败");
+                        }
+                    },
+                    error:function (xhr) {
+                        alert("服务器繁忙");
+                    }
+                })
+            }
+
+            $submit.click(function () {
+                if($text1.val().length>0&&$text2.val().length>0&&$text2.val().length<151&&$text1.val().length<21&&flag!=0) {
+                    $submit.attr('disabled',true);
+                    var a=new  Date;
+                    var time=a.getFullYear()+"年"+(a.getMonth()+1)+"月"+a.getDate()+"日"+a.getHours()+"时"+a.getMinutes()+"分"+a.getSeconds()+"秒";
+                    addComment($text1.val(),$text2.val(),time,0,0,$text1.val(),$text2.val());
+                }
+            })
+           
+            $bottom2.click(function () {
+                if(count>1&&flag!=0){
+                    $bottom2.attr('disabled',true);
+                    $bottom1.attr('disabled',true);
+                    count--;
+                    $page.text(count+"/"+pages);
+                    getComments((count-1)*3);
+                }
+            })
+            $bottom1.click(function () {
+                getPages();
+                if(count<pages&&flag!=0){
+                    $bottom2.attr('disabled',true);
+                    $bottom1.attr('disabled',true);
+                    count++;
+                    $page.text(count+"/"+pages);
+                    getComments((count-1)*3);
+                }
+            })
+
+
+            $(document).on("click","[class='upImg']",function () {
+                var $par = $(this).parent("div");
+                var upNum = $par.children(".upNum");
+                var index=$par.parent("li").index();
+                if(isClick.indexOf(idArr[index])==-1) {
+                    var num = parseInt(upNum.text());
+                    upNum.text((num + 1) + "");
+                    isClick.push(idArr[index]);
+                    change(idArr[index],"up");
+                }
+            })
+
+            $(document).on("click","[class='downImg']",function () {
+                var $par = $(this).parent("div");
+                var upNum = $par.children(".downNum");
+                var index=$par.parent("li").index();
+                if(isClick.indexOf(idArr[index])==-1) {
+                    var num = parseInt(upNum.text());
+                    upNum.text((num + 1) + "");
+                    isClick.push(idArr[index]);
+                    change(idArr[index],"down")
+                }
+            })
+        };
+    </script>
+</head>
+<body>
+<div class="top">
+    <input class="id" type="text" placeholder="请输入昵称(20字以内)...">
+    <textarea class="input" type="text" placeholder="请输入内容(150字以内)..."></textarea>
+    <button class="submit">发表</button>
+</div>
+<div class="comments">
+    <ul class="comment">
+    </ul>
+    <div class="page">1/1</div>
+    <button class="bottom1">下一页</button><button class="bottom2">上一页</button>
+</div>
+</body>
+</html>
