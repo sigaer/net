@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    table{
+        border:1px solid;
+    }
+    tr{
+        border:1px solid;
+    }
+    th{
+        border:1px solid;
+    }
+    td{
+        border:1px solid;
+    }
+    </style>
+    <script>
+        function delrow(r){
+        var i=r.parentNode.parentNode.rowIndex;
+        var x=document.getElementById('tb');
+        x.deleteRow(i);
+        }
+        function addrow(){
+            var tr=document.createElement("tr");
+            var name=document.getElementById("name")
+            var age=document.getElementById("age")
+            var a=document.getElementById("a")
+            tr.innerHTML="<td>"+name.value+"</td>"+"<td>"+age.value+"</td>"+"<td>"+a.value+"</td>"+"<td><a href='javascript:;' class='remove' onclick='delrow(this)'>删除</a></td>"
+            var tbody = document.getElementById("tbody"); 
+            tbody.appendChild(tr);
+            alert("666");
+        }
+        </script>
+</head>
+<body>
+    <table id="tb">
+        <thead>
+            <tr>
+                <th>栏目一</th>
+                <th>栏目二</th>
+                <th>栏目三</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>栏目一数据1</td>
+                <td>栏目二数据1</td>
+                <td>栏目三数据1</td>
+                <td><a href="javascript:;" class="remove" onclick="delrow(this)">删除</a></td>
+            </tr>
+            <tr>
+                <td>栏目一数据2</td>
+                <td>栏目二数据2</td>
+                <td>栏目三数据2</td>
+                <td><a href="javascript:;" class="remove" onclick="delrow(this)">删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    1:<input type="text" id="name" />
+    2:<input type="text" id="age" /> 
+    3:<input type="text" id="a" /> 
+    <input type="button" value="add" onclick=addrow()>
+</body>
+</html>

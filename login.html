@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+    body{
+background-image:url("bg/1.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed
+}
+    .sprite 
+    {
+display:inline-block;
+width: 64px;height: 64px;
+background-image: url("miku/riv.png");
+}  
+.sprite.miku{background-position: 0px 0px;}
+.sprite.meiko {background-position: -64px 0px;}
+.sprite.luka {background-position: 0px -64px;}
+.sprite.len {background-position: -64px -64px;}
+.sprite.rin {background-position: -128px 0;}
+.sprite.kaito {background-position: -128px -64px;}
+    #login{
+        width:800px;
+        height:420px;
+        background-color: #fff;
+        margin:0 auto;
+        border:2px solid #eee;
+    }
+    .bt{
+        width:790px;
+        margin:0 auto;
+        border-bottom:2px solid #eee;
+        text-align: center;
+        padding: 5px;
+    }
+    .tab{
+        width:433px;
+        margin:100px auto;
+    }
+    td{
+        padding: 5px;
+        text-align: right;
+    }
+    #btn{
+        display:block;
+        width:50px;
+        height:30px;
+        margin:0 auto;
+    }
+    </style>
+     <script>
+        window.onload=function()
+        {
+            var header=document.getElementsByClassName("header");
+            var index=3;
+            var allA=document.getElementsByTagName("a");
+        var round=1;
+            allA[index].style.backgroundColor="black";
+        var start=setInterval(autoleft,10);
+            for(var i=3;i<8;i++)
+            {
+                allA[i].num=i;
+                allA[i].onclick=function(){
+                    index=this.num;
+                    header[0].style.left=-960*(index-3)+"px";
+                    setA();
+                }
+            }
+
+            function setA()
+            {
+            for(var i=3;i<8;i++)
+            {
+                allA[i].style.backgroundColor="";
+            }
+            allA[index].style.backgroundColor="black";
+            round=(index-3)*320+1;
+            }
+        function leftmove()
+        {
+            start=setInterval(autoleft,10);
+        }
+        function autoleft()
+        {
+            console.log(round);
+            header[0].style.left=-3*round+"px";
+            round++;
+            if((round-1)%320==0&&(round!=1))
+                {
+                    for(var i=3;i<8;i++)
+            {
+                allA[i].style.backgroundColor="";
+            }
+                    allA[(round-1)/320+3].style.backgroundColor="black";
+                    clearInterval(start);
+                    setTimeout(leftmove,4000);
+                }
+            if(round>=1281)
+            {
+                round=1;
+                setTimeout(function(){
+                    header[0].style.left=0;
+                    for(var i=3;i<8;i++)
+            {
+                allA[i].style.backgroundColor="";
+            }
+                    allA[(round-1)/320+3].style.backgroundColor="black";
+                },2000);
+            }
+            }
+        }
+        function aboutme(){
+            alert("这里是关于我的内容");
+        }
+        function qq(){
+            alert("1106865024");
+        }
+        function setCookie() 
+        {
+            var name=document.getElementById("name");
+            var password=document.getElementById("password");
+            var e1=document.getElementById("e1");
+            var e2=document.getElementById("e2");
+            if(e1.innerHTML!="")
+            {
+                alert("用户名不能为空");
+            }
+            else if(e2.innerHTML!=""){
+                alert("密码不能为空");
+            }
+            else
+            {
+                document.cookie="name="+name.value;
+            document.cookie="password="+password.value;
+            alert("登录成功了!");
+            window.location.href='p1.html';
+            }
+        } 
+        function checkname(){
+            var name=document.getElementById("name");
+            var e1=document.getElementById("e1");
+            if(name.value=="")
+            {
+                e1.innerHTML="用户名不能为空";
+            }
+            else
+            {
+                e1.innerHTML="";
+            }
+        }
+        function checkpwd(){
+            var password=document.getElementById("password");
+            var e2=document.getElementById("e2");
+            if(password.value=="")
+            {
+                e2.innerHTML="密码不能为空";
+            }
+            else
+            {
+                e2.innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="head">
+        <a href="#">登录</a>
+        <a href="register.html">注册</a>
+        <a href="#" hidden="hidden">待办事项</a>
+    </div>
+    <div id="outer">
+            <ul class="header">
+                <li><img src="head/6.jpg" alt=""></li>
+                <li><img src="head/41.jpg" alt=""></li>
+                <li><img src="head/46.jpg" alt=""></li>
+                <li><img src="head/68.jpg" alt=""></li>
+                <li><img src="head/80.jpg" alt=""></li>
+            </ul>
+            <div id="navDiv">
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+    </div>
+    
+    <div class="mid1">
+        <div class="logo">
+            <img src="miku/4.jpg" alt="0">
+        </div>
+        <div class="menu">
+            <ul><li><a href="p1.html">首页</a></li>
+                <li><a href="javascript:void(0);" onclick="aboutme()">关于我</a></li>
+                <li><a href="music.html">音乐</a></li>
+                <li><a href="pic.html">相册</a></li>
+                <li><a href="#">心情</a></li>
+                <li><a href="#">留言</a></li></ul>
+        </div>
+            <div class="rtitle">
+                <div class="knowme">
+                    <h3>认识我</h3>
+                </div>
+                <div class="gz">
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">腾讯微博</a></li>
+                    <li><a href="javascript:void(0);" onclick="qq()">QQ</a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div id="login">
+        <div class="bt">
+            <h3 class="xs">登录</h3>
+        </div>
+        <div class="tab">
+            <table>
+                <tr>
+                    <td>用户名:</td>
+                    <td><input type="text" id="name" onblur=checkname()></td>
+                    <td id="e1"></td>
+                </tr>
+                <tr>
+                    <td>密码:</td>
+                    <td><input type="password" id="password" onblur=checkpwd()></td>
+                    <td id="e2"></td>
+                </tr>
+            </table>
+        </div>
+        <button id="btn" onclick="setCookie()">登录</button>
+    </div>
+</body>
+</html>

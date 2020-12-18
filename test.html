@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name;
+        function setCookie() 
+        {
+            var name=document.getElementById("name");
+            var password=document.getElementById("password");
+            document.cookie="name="+name.value;
+            document.cookie="password="+password.value;
+            alert("成功了!");
+            var table=document.getElementById("login");
+            var logb=document.getElementById("log");
+            var logout=document.getElementById("logout");
+            var wel=document.getElementById("welcome");
+            table.setAttribute("hidden","hidden");
+            logb.setAttribute("hidden","hidden");
+            logout.removeAttribute("hidden");
+            wel.removeAttribute("hidden");
+        } 
+        function getCookie() 
+        { 
+            nick=document.cookie.split(";")[0].split("=")[1];
+            password=document.cookie.split(";")[1].split("=")[1];
+            alert("欢迎"+nick+"!"+" 您的密码是"+password);
+        }
+        function logout()
+        {
+            var date=new Date();
+                date.setTime(date.getTime()-10000);
+                document.cookie="name=; expire="+date.toGMTString()+"; path=/";
+                document.cookie="password=; expire="+date.toGMTString()+"; path=/";
+            var table=document.getElementById("login");
+            var logb=document.getElementById("log");
+            var logout=document.getElementById("logout");
+            var wel=document.getElementById("welcome");
+            table.removeAttribute("hidden");
+            logb.removeAttribute("hidden");
+            logout.setAttribute("hidden","hidden");
+            wel.setAttribute("hidden","hidden");
+        }
+        function hello(){
+            alert("hello");
+        }
+    </script>
+</head>
+<body><table id="login">
+    <tr>
+        <td>用户名:</td>
+        <td><input type="text" id="name"/></td>
+    </tr>
+    <tr>
+        <td align="right">密码:</td>
+        <td><input type="password" id="password" /> </td>
+    </tr>
+</table>
+    <input id="log" type="button" onclick="setCookie()" value="登录"">
+    <input id="welcome" hidden="hidden" type="button" onclick="getCookie()" value="欢迎">
+    <input id="logout" hidden="hidden" type="button" onclick="logout()" value="登出">
+    <a href="#" onclick=hello()>haaa</a>
+</body>
+</html>

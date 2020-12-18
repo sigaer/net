@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    body{
+background-image:url("bg/1.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed
+}
+    .sprite 
+    {
+display:inline-block;
+width: 64px;height: 64px;
+background-image: url("miku/riv.png");
+}  
+.sprite.miku{background-position: 0px 0px;}
+.sprite.meiko {background-position: -64px 0px;}
+.sprite.luka {background-position: 0px -64px;}
+.sprite.len {background-position: -64px -64px;}
+.sprite.rin {background-position: -128px 0;}
+.sprite.kaito {background-position: -128px -64px;}
+.news{
+        background-color: #fff;
+        height:600px;
+    }
+    .news p{
+        margin:20px 50px;
+    }
+    </style>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+  <script src="jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+      {
+        $.ajax(
+          {
+            url:"./json/v.json",
+            type:"GET",
+            dataType:"json",
+            success:function(data){
+              var hash=window.location.hash;
+              var par=hash.split('=')[0];
+              var id=hash.split('=')[1];
+              $.each(data.test,function(i,item){
+                if(item.id==id){
+                  $.get('./tpl/post.tpl',function(result){
+                    result=result.replace(':content',item.content)
+                    result=result.replace(':title',item.title)
+                    $(par).html(result);
+                    $.getScript("./js/first.js",function(){})
+                  })
+                  return false;
+                }
+              })
+              
+            }
+          }
+        )
+      }
+  </script>
+  <title>Document</title>
+</head>
+<body>
+    <div id="id"></div>
+</body>
+</html>

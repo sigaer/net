@@ -5,216 +5,50 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-    html,body{
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
     body{
-        background-image:url("bg/1.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed
-    }
-    *{
-        margin:5;
-        padding:0;
-    }
-    .header{
-        background-image:url("miku/6.jpg");
-        background-repeat: no-repeat;
-        background-size: 80% 100px;
-        margin-top:0;
-        margin-left: 10%;
-        margin-right: 100px;
-        width:100%;
-        height: 100px;
-    }
-    .logo{
-        margin-left: 125px;
-        margin-top:30px;
-        float:left;
-    }
-    .logo img{
-        width:120px;
-        height:120px;
-    }
-    .rtitle{
-        text-align: center;
-        float:right;
-        width:200px;
-        height: 40px;
-    }
-    .gz{
-        list-style: none;
-        background-color:#DCDCDC;
-    }
-    .gz ul li{
-        list-style: none;
-        float:left;
-        padding: 5px;
-    }
-    .gz a{
-        text-decoration: none;
-    }
-    .gz a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .gz:after {                                            
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-    .knowme{
-        border-bottom:#CCC 1px solid;
-    }
-    .menu{
-        margin-left:575px;
-        margin-top:10px;
-        padding:5px;
-        height: 50px;
-    }
-    .menu ul li{
-        border: 1px solid red;
-        float:left;
-        list-style: none;
-        font-size: 20px;
-        border-radius:25px;
-        text-align: center;
-        padding: 5px;
-        background: #eee;
-    }
-    .menu ul li a{
-        text-decoration: none;
-        color:darkgreen;
-    }
-    .menu a:hover{
-        text-decoration: underline;
-        background: #f2cdb0;
-        color:#f00;
-    }
-    .menu:after {                                            
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-
-    
-    .lis{
-        list-style: none;
-        float:left;
-        margin-top:0;
-        margin-left:125px;
-        width: 120px;
-        background-color:#DCDCDC;
-    }
-    .lis ul li{
-        list-style: none;
-    }
-    .lis a{
-        text-decoration: none;
-    }
-    .lis a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .center{
-        border:1px solid pink;
-        margin-right: 275px;
-        margin-left: 275px;
-        background-color: #fff;
-        height:470px;
-    }
-    .title{
-        margin:0;
-        border:1px solid red;
-        text-align: center;
-        height: 70px;
-    }
-    .mid1{
-        margin:5;
-        height:200px;
-    }
-    .right{
-        float:right;
-        margin-top:0px;
-        margin-right:45px;
-        width:200px;
-        background-color: #CCC;
-    }
-    .xtitle{
-        margin:0;
-        text-align: center;
-        height: 30px;
-    }
-    .right ul li{
-        list-style: none;
-        font-size: 15px;
-        text-align: left;
-        padding: 5px;
-        margin-left: 5px;
-        border-bottom:#CCC 1px solid;
-    }
-    .right ul li a{
-        text-decoration: none;
-    }
-    .right a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .news{
-        overflow: scroll;
-        background-color: #fff;
-        height:400px;
-        margin-bottom: 0px;
-    }
-    .news ul li{
-        list-style: none;
-        font-size: 15px;
-        text-align: left;
-        padding: 5px;
-        margin-left: 50px;
-    }
-    .news ul li a{
-        text-decoration: none;
-    }
-    .news a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .news:after {                                            
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-    .sprite {
-        display:inline-block;
-        width: 64px;height: 64px;
-        background-image: url("miku/riv.png");
-    }    
-    .sprite.miku{background-position: 0px 0px;}
-    .sprite.meiko {background-position: -64px 0px;}
-    .sprite.luka {background-position: 0px -64px;}
-    .sprite.len {background-position: -64px -64px;}
-    .sprite.rin {background-position: -128px 0;}
-    .sprite.kaito {background-position: -128px -64px;}
+background-image:url("bg/1.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed
+}
+    .sprite 
+    {
+display:inline-block;
+width: 64px;height: 64px;
+background-image: url("miku/riv.png");
+}  
+.sprite.miku{background-position: 0px 0px;}
+.sprite.meiko {background-position: -64px 0px;}
+.sprite.luka {background-position: 0px -64px;}
+.sprite.len {background-position: -64px -64px;}
+.sprite.rin {background-position: -128px 0;}
+.sprite.kaito {background-position: -128px -64px;}
     </style>
-     <script>
-        function aboutme(){
-            alert("这里是关于我的内容");
-        }
-    </script>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <script src="js/fm.js"></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Vocaloid小站</h1>
+    <div id="head">
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+        <a href="note.html" hidden="hidden">待办事项</a>
+        <a href="#" hidden="hidden" onclick=logout()>登出</a>
+    </div>
+    <div id="outer">
+            <ul class="header">
+                <li><img src="head/6.jpg" alt=""></li>
+                <li><img src="head/41.jpg" alt=""></li>
+                <li><img src="head/46.jpg" alt=""></li>
+                <li><img src="head/68.jpg" alt=""></li>
+                <li><img src="head/80.jpg" alt=""></li>
+            </ul>
+            <div id="navDiv">
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
     </div>
     
     <div class="mid1">
@@ -222,10 +56,10 @@
             <img src="miku/4.jpg" alt="0">
         </div>
         <div class="menu">
-            <ul><li><a href="p1.html">首页</a></li>
+            <ul><li><a href="#">首页</a></li>
                 <li><a href="javascript:void(0);" onclick="aboutme()">关于我</a></li>
                 <li><a href="music.html">音乐</a></li>
-                <li><a href="#">相册</a></li>
+                <li><a href="pic.html">相册</a></li>
                 <li><a href="#">心情</a></li>
                 <li><a href="#">留言</a></li></ul>
         </div>
@@ -237,23 +71,24 @@
                     <ul>
                         <li><a href="#">新浪微博</a></li>
                         <li><a href="#">腾讯微博</a></li>
-                        <li><a href="#">QQ</a></li>
+                    <li><a href="javascript:void(0);" onclick="qq()">QQ</a></li>
                     </ul>
                 </div>
             </div>
+            <div id="wel">
+                <h3></h3>
+            </div>
     </div>
-    
-    
     <div class="lis">
         <div class=xtitle>
             <h5>成员介绍</h5>
         </div>
-        <ul><li><span class="sprite miku"></span><a href="intro.html">miku</a></li>
-            <li><span class="sprite rin"></span><a href="intro.html">rin</a></li>
-            <li><span class="sprite len"></span><a href="intro.html">len</a></li>
-            <li><span class="sprite luka"></span><a href="intro.html">luka</a></li>
-            <li><span class="sprite kaito"></span><a href="intro.html">kaito</a></li>
-            <li><span class="sprite meiko"></span><a href="intro.html">meiko</a></li>
+        <ul><li><span class="sprite miku"></span><a href="intro.html?c=0">miku</a></li>
+            <li><span class="sprite rin"></span><a href="intro.html?c=1">rin</a></li>
+            <li><span class="sprite len"></span><a href="intro.html?c=2">len</a></li>
+            <li><span class="sprite luka"></span><a href="intro.html?c=3">luka</a></li>
+            <li><span class="sprite kaito"></span><a href="intro.html?c=4">kaito</a></li>
+            <li><span class="sprite meiko"></span><a href="intro.html?c=5">meiko</a></li>
         </ul>
     </div>
     <div class=right>
@@ -262,34 +97,19 @@
         </div>
         <ul>
             <li>
-                <a href="news.html">资讯1</a>
+                <a href="show.html#id=1">什么是vocaloid?</a>
             </li>
             <li>
-                <a href="news.html">资讯2</a>
+                <a href="news.html?d=1&title=vocaloid的发展历程">vocaloid的发展历程</a>
             </li>
             <li>
-                <a href="news.html">资讯3</a>
+                <a href="news.html?d=2&title=vocaloidP主介绍">vocaloidP主介绍</a>
             </li>
             <li>
-                <a href="news.html">资讯4</a>
+                <a href="news.html?d=3&title=vocaloid名曲推荐">vocaloid名曲推荐</a>
             </li>
             <li>
-                <a href="#">资讯5</a>
-            </li>
-            <li>
-                <a href="#">资讯6</a>
-            </li>
-            <li>
-                <a href="#">资讯7</a>
-            </li>
-            <li>
-                <a href="news.html">资讯8</a>
-            </li>
-            <li>
-                <a href="news.html">资讯9</a>
-            </li>
-            <li>
-                <a href="news.html">资讯10</a>
+                <a href="show.html#id=5">vocaloid参数介绍</a>
             </li>
         </ul>
     </div>
