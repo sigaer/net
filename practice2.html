@@ -2,29 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script language="javascript" type="text/javascript">
-    </script>
-    <style type="text/css">
-    input{
-        font-size: 15px;
-        line-height: 25px;
-    }
-        </style>
+    <title>简单的留言板</title>
+    <style type = "text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        textarea {
+            width:320px;
+            height:80px;
+            background:whitesmoke;
+            font-size:16px;
+        }
+        span:hover {
+            cursor:pointer;
+        }
+    </style>
+
 </head>
 <body>
-    <form method="POST">
-        <table width="450" border="0">
-        <tr>
-            <td align="right">用户名:</td>
-            <td><input type="text" id="username" value=""></td>
-        </tr>
-        <tr>
-            <td align="right">密码:</td>
-            <td><input type="password" id="password" value=""></td>
-        </tr>
-        </table>
-    </form>
+    <h1>简单留言板</h1>
+    <div id = "box">
+        <!--通过js实现根据用户的输入动态创建一个存放用户留言的li，并且允许用户删除留言-->
+    </div>
+    <label>
+        <textarea id = "msg" rows = "5" cols = "42"></textarea>
+    </label>
+    <input type = "button" id = "btn" value = "留言">
+    <button id = "calc" onclick = calc()>统计</button>
 </body>
+<script src="js/say.js"></script>
 </html>

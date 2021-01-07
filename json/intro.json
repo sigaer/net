@@ -1,0 +1,40 @@
+{
+    "test":[
+        {
+            "id":"1",
+            "name":"初音ミク",
+            "imgurl":"./show/miku.jpg",
+            "content":"<p>初音未来(日语：初音ミク 英语：Hatsune Miku)，是2007年8月31日由CRYPTON FUTURE MEDIA以Yamaha的VOCALOID系列语音合成程序为基础开发的音源库，音源数据资料采样于日本声优藤田咲，是最早期的虚拟偶像之一。</p><p>2010年4月30日，发布了初音未来6种不同声调的版本'初音未来Append'。2013年8月31日，初音未来英文版本同VOCALOID3一并发行。2017年8月24日，初音未来v4中文版 发行，初音未来成为世界上第一个有三门语种声库的歌姬。</p><p>此外，初音未来还担任日本音乐团体Sound Horizon的演唱与合唱。随着'初音未来'声库的发售，这种成功的营销方式大幅改变了电子音乐人对于音乐业的认知和整个行业的格局。</p><p>在衍生文化现象后，初音未来可指代包装封面上的那位葱色头发的少女形象，并且还及其衍生出相关作品以及MV等，还可指活跃在动画漫画中出现的'人气歌手'。</p>"
+        },
+        {
+            "id":"2",
+            "name":"镜音铃",
+            "imgurl":"./show/rin.jpg",
+            "content":"<p>镜音铃是由日本克里普敦未来媒体有限公司(Crypton Future Media, INC.)开发贩售的虚拟歌手软件(声库)及其形象，是Crypton旗下'角色主唱系列'的第二作，与镜音连(V2)一同于2007年12月27日发售。(其V2，V3，V4X，V4E版本是基于Yamaha开发的VOCALOID歌声合成引擎开发的)。</p><p>与初音未来、镜音连、巡音流歌、MEIKO、KAITO共称作Piapro Characters(Piapro角色)。</p><p>镜音铃和镜音连是CRYPTON FUTURE MEDIA(克里普顿未来传媒公司)贩售的音声合成桌上音乐软件VOCALOID2角色主唱系列的第二作。是第一个有复数声音资料库的VOCALOID。</p>"
+        },
+        {
+            "id":"3",
+            "name":"镜音连",
+            "imgurl":"./show/len.jpg",
+            "content":"<p>镜音连是由日本克里普敦未来媒体有限公司(Crypton Future Media, INC.)开发贩售的虚拟歌手软件(声库)及其形象，是Crypton旗下'角色主唱系列'的第二作，与镜音铃(V2)一同于2007年12月27日发售。(其V2，V4X，V4E版本是基于Yamaha开发的VOCALOID歌声合成引擎开发的)</p><p>与初音未来、镜音铃、巡音流歌、MEIKO、KAITO共称作Piapro Characters(Piapro角色)。</p>"
+        },
+        {
+            "id":"4",
+            "name":"巡音ルカ",
+            "imgurl":"./show/luka.jpg",
+            "content":"<p>巡音ルカ(巡音露卡、巡音流歌、巡音流香、Megurine Luka)是CRYPTON FUTURE MEDIA(略作'CRYPTON')以Yamaha的VOCALOID 3语音合成引擎为基础开发贩售的虚拟女性歌手软件角色主唱系列的第三作，是VOCALOID家族中耳熟能详的一位。</p>"
+        },
+        {
+            "id":"5",
+            "name":"カイト",
+            "imgurl":"./show/kaito.jpg",
+            "content":"<p>罗马音：KAITO</p><p>假名：カイト（かいと）</p><p>姓：始音（注意:官定名称是KAITO，始音这种称呼是错误的，只是部分天朝人民的同人设定，日本是没有这种称呼的。）</p><p>爱称:うたのお兄さん</p><p>年龄：20岁（非官方设定）</p><p>发售日：2006.2.17（2.14公布）</p><p>声源：风雅なおと</p><p>擅长曲风：民谣、童谣、POP</p><p>代表物：冰激凌（围巾/正露丸）</p><p>天然呆一只~不吃冰淇淋会哭的！</p><p>常被欺负，FANS爱称为大哥。</p><p>首个日语男声音声合成歌唱软件。</p><p>酷爱冰淇淋，常备正露丸，静冈出生，戴上眼镜会变鬼畜。</p>"
+        },
+        {
+            "id":"6",
+            "name":"メイコ",
+            "imgurl":"./show/meiko.jpg",
+            "content":"<p>MEIKO是《VOCALOID》声音库软件里面的虚拟女性歌手。</p>"
+        }
+    ]
+}

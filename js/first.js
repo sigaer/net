@@ -55,6 +55,7 @@ var allA=document.getElementsByTagName("a");
         function autoleft()
         {
             header[0].style.left=-3*round+"px";
+            console.log(round);
             round++;
             if((round-1)%320==0&&(round!=1))
                 {

@@ -1,94 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-    body{
-background-image:url("bg/1.jpg");
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed
-}
-    .sprite 
-    {
-display:inline-block;
-width: 64px;height: 64px;
-background-image: url("miku/riv.png");
-}  
-.sprite.miku{background-position: 0px 0px;}
-.sprite.meiko {background-position: -64px 0px;}
-.sprite.luka {background-position: 0px -64px;}
-.sprite.len {background-position: -64px -64px;}
-.sprite.rin {background-position: -128px 0;}
-.sprite.kaito {background-position: -128px -64px;}
+        body {
+            background-image: url("bg/1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed
+        }
+
+        .sprite {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            background-image: url("miku/riv.png");
+        }
+
+        .sprite.miku {
+            background-position: 0px 0px;
+        }
+
+        .sprite.meiko {
+            background-position: -64px 0px;
+        }
+
+        .sprite.luka {
+            background-position: 0px -64px;
+        }
+
+        .sprite.len {
+            background-position: -64px -64px;
+        }
+
+        .sprite.rin {
+            background-position: -128px 0;
+        }
+
+        .sprite.kaito {
+            background-position: -128px -64px;
+        }
     </style>
-    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
     <script src="js/fm.js"></script>
 </head>
+
 <body>
-    <div id="head">
+    <div id="head" style="position: fixed;z-index: 1;">
         <a href="login.html">登录</a>
         <a href="register.html">注册</a>
         <a href="note.html" hidden="hidden">待办事项</a>
         <a href="#" hidden="hidden" onclick=logout()>登出</a>
+        <p id="time" style="position: fixed;z-index: 2;color:#ffffff"></p>
+        <script>
+            var myVar = setInterval(function () {
+                myTimer()
+            }, 1000);
+
+            function myTimer() {
+                var d = new Date();
+                var t = d.toLocaleTimeString();
+                document.getElementById("time").innerHTML = t;
+            }
+        </script>
     </div>
+    <div style="width:100%;height:50px"></div>
     <div id="outer">
-            <ul class="header">
-                <li><img src="head/6.jpg" alt=""></li>
-                <li><img src="head/41.jpg" alt=""></li>
-                <li><img src="head/46.jpg" alt=""></li>
-                <li><img src="head/68.jpg" alt=""></li>
-                <li><img src="head/80.jpg" alt=""></li>
-            </ul>
-            <div id="navDiv">
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-            </div>
+        <ul class="header">
+            <li><img src="head/6.jpg" alt=""></li>
+            <li><img src="head/41.jpg" alt=""></li>
+            <li><img src="head/46.jpg" alt=""></li>
+            <li><img src="head/68.jpg" alt=""></li>
+            <li><img src="head/80.jpg" alt=""></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
     </div>
-    
     <div class="mid1">
         <div class="logo">
             <img src="miku/4.jpg" alt="0">
         </div>
         <div class="menu">
-            <ul><li><a href="#">首页</a></li>
+            <ul>
+                <li><a href="#">首页</a></li>
                 <li><a href="javascript:void(0);" onclick="aboutme()">关于我</a></li>
                 <li><a href="music.html">音乐</a></li>
                 <li><a href="pic.html">相册</a></li>
-                <li><a href="#">心情</a></li>
-                <li><a href="#">留言</a></li></ul>
+                <li><a href="note.html">心情</a></li>
+                <li><a href="say.html">留言</a></li>
+            </ul>
         </div>
-            <div class="rtitle">
-                <div class="knowme">
-                    <h3>认识我</h3>
-                </div>
-                <div class="gz">
-                    <ul>
-                        <li><a href="#">新浪微博</a></li>
-                        <li><a href="#">腾讯微博</a></li>
+        <div class="rtitle">
+            <div class="knowme">
+                <h3>认识我</h3>
+            </div>
+            <div class="gz">
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">腾讯微博</a></li>
                     <li><a href="javascript:void(0);" onclick="qq()">QQ</a></li>
-                    </ul>
-                </div>
+                </ul>
             </div>
-            <div id="wel">
-                <h3></h3>
-            </div>
+        </div>
+        <div id="wel">
+            <h3></h3>
+        </div>
     </div>
     <div class="lis">
         <div class=xtitle>
             <h5>成员介绍</h5>
         </div>
-        <ul><li><span class="sprite miku"></span><a href="intro.html?c=0">miku</a></li>
-            <li><span class="sprite rin"></span><a href="intro.html?c=1">rin</a></li>
-            <li><span class="sprite len"></span><a href="intro.html?c=2">len</a></li>
-            <li><span class="sprite luka"></span><a href="intro.html?c=3">luka</a></li>
-            <li><span class="sprite kaito"></span><a href="intro.html?c=4">kaito</a></li>
-            <li><span class="sprite meiko"></span><a href="intro.html?c=5">meiko</a></li>
+        <ul>
+            <li><span class="sprite miku"></span><a href="intro.html#id=1">miku</a></li>
+            <li><span class="sprite rin"></span><a href="intro.html#id=2">rin</a></li>
+            <li><span class="sprite len"></span><a href="intro.html#id=3">len</a></li>
+            <li><span class="sprite luka"></span><a href="intro.html#id=4">luka</a></li>
+            <li><span class="sprite kaito"></span><a href="intro.html#id=5">kaito</a></li>
+            <li><span class="sprite meiko"></span><a href="intro.html#id=6">meiko</a></li>
         </ul>
     </div>
     <div class=right>
@@ -100,7 +137,7 @@ background-image: url("miku/riv.png");
                 <a href="show.html#id=1">什么是vocaloid?</a>
             </li>
             <li>
-                <a href="news.html?d=1&title=vocaloid的发展历程">vocaloid的发展历程</a>
+                <a href="show.html#id=2">vocaloid的发展历程</a>
             </li>
             <li>
                 <a href="news.html?d=2&title=vocaloidP主介绍">vocaloidP主介绍</a>
@@ -117,42 +154,43 @@ background-image: url("miku/riv.png");
         <div class=title>
             <h4>最新资讯</h4>
         </div>
-        
-       <div class="news">
-        <ul>
-            <li>
-                <a href="news.html">资讯1</a>
-            </li>
-            <li>
-                <a href="news.html">资讯2</a>
-            </li>
-            <li>
-                <a href="news.html">资讯3</a>
-            </li>
-            <li>
-                <a href="news.html">资讯4</a>
-            </li>
-            <li>
-                <a href="news.html">资讯5</a>
-            </li>
-            <li>
-                <a href="news.html">资讯6</a>
-            </li>
-            <li>
-                <a href="#">资讯7</a>
-            </li>
-            <li>
-                <a href="#">资讯8</a>
-            </li>
-            <li>
-                <a href="#">资讯9</a>
-            </li>
-            <li>
-                <a href="#">资讯10</a>
-            </li>
-        </ul>
-       </div>
+
+        <div class="news">
+            <ul>
+                <li>
+                    <a href="news.html?id=1&title=资讯1">资讯1</a>
+                </li>
+                <li>
+                    <a href="news.html?id=2&title=资讯2">资讯2</a>
+                </li>
+                <li>
+                    <a href="news.html?id=3&title=资讯3">资讯3</a>
+                </li>
+                <li>
+                    <a href="news.html?id=4&title=资讯4">资讯4</a>
+                </li>
+                <li>
+                    <a href="news.html?id=5&title=资讯5">资讯5</a>
+                </li>
+                <li>
+                    <a href="news.html?id=6&title=资讯6">资讯6</a>
+                </li>
+                <li>
+                    <a href="news.html?id=6&title=资讯7">资讯7</a>
+                </li>
+                <li>
+                    <a href="news.html?id=6&title=资讯8">资讯8</a>
+                </li>
+                <li>
+                    <a href="news.html?id=6&title=资讯9">资讯9</a>
+                </li>
+                <li>
+                    <a href="news.html?id=6&title=资讯10">资讯10</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    
+
 </body>
+
 </html>

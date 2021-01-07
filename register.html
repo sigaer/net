@@ -1,312 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Document</title>
-    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
     <style type="text/css">
-    body{
-background-image:url("bg/1.jpg");
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed
-}
-    .sprite 
-    {
-display:inline-block;
-width: 64px;height: 64px;
-background-image: url("miku/riv.png");
-}  
-.sprite.miku{background-position: 0px 0px;}
-.sprite.meiko {background-position: -64px 0px;}
-.sprite.luka {background-position: 0px -64px;}
-.sprite.len {background-position: -64px -64px;}
-.sprite.rin {background-position: -128px 0;}
-.sprite.kaito {background-position: -128px -64px;}
-    #login{
-        width:800px;
-        height:600px;
-        background-color: #fff;
-        margin:0 auto;
-        border:2px solid #eee;
-    }
-    .bt{
-        width:790px;
-        margin:0 auto;
-        border-bottom:2px solid #eee;
-        text-align: center;
-        padding: 5px;
-    }
-    .tab{
-        width:500px;
-        margin:100px auto;
-    }
-    td{
-        padding: 5px;
-        text-align: right;
-    }
-    #btn{
-        display:block;
-        width:50px;
-        height:30px;
-        margin:0 auto;
-    }
-    .tab p{
-        padding:5px;
-    }
-    </style>
-     <script>
-         function compare()
-            {
-                var a=document.getElementById('password').value;
-                var b=document.getElementById('password2').value;
-                if(a=="")
-                {
-                    document.getElementById('e2').innerHTML="请输入密码";
-                }
-                if(b=="")
-                {
-                    document.getElementById('e3').innerHTML="请再输入一次密码";
-                }
-                if(a==b&&a!="")
-                {
-                    document.getElementById('e3').innerHTML="密码一致!";
-                }
-                else if(a!=""&&b!="")
-                {
-                    document.getElementById('e3').innerHTML="两次密码不一致!";
-                }
-                else{
+        body {
+            background-image: url("bg/1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed
+        }
 
-                }
+        .sprite {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            background-image: url("miku/riv.png");
+        }
+
+        .sprite.miku {
+            background-position: 0px 0px;
+        }
+
+        .sprite.meiko {
+            background-position: -64px 0px;
+        }
+
+        .sprite.luka {
+            background-position: 0px -64px;
+        }
+
+        .sprite.len {
+            background-position: -64px -64px;
+        }
+
+        .sprite.rin {
+            background-position: -128px 0;
+        }
+
+        .sprite.kaito {
+            background-position: -128px -64px;
+        }
+
+        #login {
+            width: 800px;
+            height: 600px;
+            background-color: #fff;
+            margin: 0 auto;
+            border: 2px solid #eee;
+        }
+
+        .bt {
+            width: 790px;
+            margin: 0 auto;
+            border-bottom: 2px solid #eee;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .tab {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        td {
+            padding: 5px;
+            text-align: right;
+        }
+
+        #btn {
+            display: block;
+            width: 50px;
+            height: 30px;
+            margin: 0 auto;
+        }
+
+        .tab p {
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function compare() {
+            var a = document.getElementById('password').value;
+            var b = document.getElementById('password2').value;
+            if (a == "") {
+                document.getElementById('e2').innerHTML = "请输入密码";
             }
-        window.onload=function()
-        {
-            var header=document.getElementsByClassName("header");
-            var index=3;
-            var allA=document.getElementsByTagName("a");
-        var round=1;
-            allA[index].style.backgroundColor="black";
-        var start=setInterval(autoleft,10);
-            for(var i=3;i<8;i++)
-            {
-                allA[i].num=i;
-                allA[i].onclick=function(){
-                    index=this.num;
-                    header[0].style.left=-960*(index-3)+"px";
+            if (b == "") {
+                document.getElementById('e3').innerHTML = "请再输入一次密码";
+            }
+            if (a == b && a != "") {
+                document.getElementById('e3').innerHTML = "密码一致!";
+            } else if (a != "" && b != "") {
+                document.getElementById('e3').innerHTML = "两次密码不一致!";
+            } else {
+
+            }
+        }
+        window.onload = function () {
+            var header = document.getElementsByClassName("header");
+            var index = 3;
+            var allA = document.getElementsByTagName("a");
+            var round = 1;
+            allA[index].style.backgroundColor = "black";
+            var start = setInterval(autoleft, 10);
+            for (var i = 3; i < 8; i++) {
+                allA[i].num = i;
+                allA[i].onclick = function () {
+                    index = this.num;
+                    header[0].style.left = -960 * (index - 3) + "px";
                     setA();
                 }
             }
 
-            function setA()
-            {
-            for(var i=3;i<8;i++)
-            {
-                allA[i].style.backgroundColor="";
-            }
-            allA[index].style.backgroundColor="black";
-            round=(index-3)*320+1;
-            }
-        function leftmove()
-        {
-            start=setInterval(autoleft,10);
-        }
-        function autoleft()
-        {
-            console.log(round);
-            header[0].style.left=-3*round+"px";
-            round++;
-            if((round-1)%320==0&&(round!=1))
-                {
-                    for(var i=3;i<8;i++)
-            {
-                allA[i].style.backgroundColor="";
-            }
-                    allA[(round-1)/320+3].style.backgroundColor="black";
-                    clearInterval(start);
-                    setTimeout(leftmove,4000);
+            function setA() {
+                for (var i = 3; i < 8; i++) {
+                    allA[i].style.backgroundColor = "";
                 }
-            if(round>=1281)
-            {
-                round=1;
-                setTimeout(function(){
-                    header[0].style.left=0;
-                    for(var i=3;i<8;i++)
-            {
-                allA[i].style.backgroundColor="";
+                allA[index].style.backgroundColor = "black";
+                round = (index - 3) * 320 + 1;
             }
-                    allA[(round-1)/320+3].style.backgroundColor="black";
-                },2000);
+
+            function leftmove() {
+                start = setInterval(autoleft, 10);
             }
+
+            function autoleft() {
+                console.log(round);
+                header[0].style.left = -3 * round + "px";
+                round++;
+                if ((round - 1) % 320 == 0 && (round != 1)) {
+                    for (var i = 3; i < 8; i++) {
+                        allA[i].style.backgroundColor = "";
+                    }
+                    allA[(round - 1) / 320 + 3].style.backgroundColor = "black";
+                    clearInterval(start);
+                    setTimeout(leftmove, 4000);
+                }
+                if (round >= 1281) {
+                    round = 1;
+                    setTimeout(function () {
+                        header[0].style.left = 0;
+                        for (var i = 3; i < 8; i++) {
+                            allA[i].style.backgroundColor = "";
+                        }
+                        allA[(round - 1) / 320 + 3].style.backgroundColor = "black";
+                    }, 2000);
+                }
             }
         }
-        function aboutme(){
+
+        function aboutme() {
             alert("这里是关于我的内容");
         }
-        function qq(){
+
+        function qq() {
             alert("1106865024");
         }
-        function setCookie() 
-        {
-            var name=document.getElementById("name");
-            var password=document.getElementById("password");
-            var e1=document.getElementById("e1");
-            var e2=document.getElementById("e2");
-            if(e1.innerHTML!="")
-            {
-                alert("用户名不能为空");
-            }
-            else if(e2.innerHTML!=""){
-                alert("密码不能为空");
-            }
-            else
-            {
-                document.cookie="name="+name.value;
-            document.cookie="password="+password.value;
-            alert("登录成功了!");
-            window.location.href='p1.html?flag=true';
-            }
-        } 
-        function checkname(){
-            var name=document.getElementById("name");
-            var e1=document.getElementById("e1");
-            if(name.value=="")
-            {
-                e1.innerHTML="用户名不能为空";
-            }
-            else
-            {
-                e1.innerHTML="";
-            }
-        }
-        function checkpwd(){
-            var password=document.getElementById("password");
-            var e2=document.getElementById("e2");
-            if(password.value=="")
-            {
-                e2.innerHTML="密码不能为空";
-            }
-            else
-            {
-                e2.innerHTML="";
-            }
-        }
-        function checkbirth(){
-            var birthday=document.getElementById("birthday");
-            var reg=/^(\d{4})\-(\d{1,2})\-(\d{1,2})$/;
-            var e4=document.getElementById("e4");
-            if(birthday.value=="")
-            {
-                e4.innerHTML="请输入生日信息"
-            }
-            else if(!reg.test(birthday.value))
-            {
-                e4.innerHTML="请按yyyy-mm-dd的格式输入";
-            }
-            else
-            {
-                e4.innerHTML="";
-            }
-        }
-        function checkmail(){
-            var mail=document.getElementById("mail");
-            var reg=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/;
-            var e5=document.getElementById("e5");
-            if(mail.value=="")
-            {
-                e5.innerHTML="请输入邮箱信息"
-            }
-            else if(!reg.test(mail.value))
-            {
-                e5.innerHTML="请输入正确的邮箱地址";
-            }
-            else
-            {
-                e5.innerHTML="";
-            }
-        }
-        function checkphone(){
-            var phone=document.getElementById("phone");
-            var reg=/^\d{11}$/;
-            var e6=document.getElementById("e6");
-            if(mail.value=="")
-            {
-                e6.innerHTML="请输入电话信息"
-            }
-            else if(!reg.test(mail.value))
-            {
-                e6.innerHTML="请输入正确的手机号码";
-            }
-            else
-            {
-                e6.innerHTML="";
-            }
-        }
-        function formcheck(){
-            var e1=document.getElementById("e1").value;
-            var e2=document.getElementById("e2").value;
-            var e3=document.getElementById("e3").value;
-            var e4=document.getElementById("e4").value;
-            var e5=document.getElementById("e5").value;
-            var e6=document.getElementById("e6").value;
-            if(e1!=""||e2!=""||e3!=""||e4!=""||e5!=""||e6!="")
-            {
 
+        function setCookie() {
+            var name = document.getElementById("name");
+            var password = document.getElementById("password");
+            var e1 = document.getElementById("e1");
+            var e2 = document.getElementById("e2");
+            if (e1.innerHTML != "") {
+                alert("用户名不能为空");
+            } else if (e2.innerHTML != "") {
+                alert("密码不能为空");
+            } else {
+                document.cookie = "name=" + name.value;
+                document.cookie = "password=" + password.value;
+                alert("登录成功了!");
+                window.location.href = 'p1.html?flag=true';
             }
-            else{
-                location.href="p1.html";
+        }
+
+        function checkname() {
+            var name = document.getElementById("name");
+            var e1 = document.getElementById("e1");
+            if (name.value == "") {
+                e1.innerHTML = "用户名不能为空";
+            } else {
+                e1.innerHTML = "";
+            }
+        }
+
+        function checkpwd() {
+            var password = document.getElementById("password");
+            var e2 = document.getElementById("e2");
+            if (password.value == "") {
+                e2.innerHTML = "密码不能为空";
+            } else {
+                e2.innerHTML = "";
+            }
+        }
+
+        function checkbirth() {
+            var birthday = document.getElementById("birthday");
+            var reg = /^(\d{4})\-(\d{1,2})\-(\d{1,2})$/;
+            var e4 = document.getElementById("e4");
+            if (birthday.value == "") {
+                e4.innerHTML = "请输入生日信息"
+            } else if (!reg.test(birthday.value)) {
+                e4.innerHTML = "请按yyyy-mm-dd的格式输入";
+            } else {
+                e4.innerHTML = "";
+            }
+        }
+
+        function checkmail() {
+            var mail = document.getElementById("mail");
+            var reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/;
+            var e5 = document.getElementById("e5");
+            if (mail.value == "") {
+                e5.innerHTML = "请输入邮箱信息"
+            } else if (!reg.test(mail.value)) {
+                e5.innerHTML = "请输入正确的邮箱地址";
+            } else {
+                e5.innerHTML = "";
+            }
+        }
+
+        function checkphone() {
+            var phone = document.getElementById("phone");
+            var reg = /^\d{11}$/;
+            var e6 = document.getElementById("e6");
+            if (mail.value == "") {
+                e6.innerHTML = "请输入电话信息"
+            } else if (!reg.test(mail.value)) {
+                e6.innerHTML = "请输入正确的手机号码";
+            } else {
+                e6.innerHTML = "";
+            }
+        }
+
+        function formcheck() {
+            var e1 = document.getElementById("e1").value;
+            var e2 = document.getElementById("e2").value;
+            var e3 = document.getElementById("e3").value;
+            var e4 = document.getElementById("e4").value;
+            var e5 = document.getElementById("e5").value;
+            var e6 = document.getElementById("e6").value;
+            if (e1 != "" || e2 != "" || e3 != "" || e4 != "" || e5 != "" || e6 != "") {
+
+            } else {
+                location.href = "p1.html";
             }
         }
     </script>
 </head>
+
 <body>
-    <div id="head">
+    <div id="head" style="position: fixed;z-index: 2">
         <a href="login.html">登录</a>
         <a href="#">注册</a>
         <a href="#" hidden="hidden">待办事项</a>
+        <p id="time" style="position: fixed;z-index: 2;color:#ffffff"></p>
+        <script>
+            var myVar = setInterval(function () {
+                myTimer()
+            }, 1000);
+
+            function myTimer() {
+                var d = new Date();
+                var t = d.toLocaleTimeString();
+                document.getElementById("time").innerHTML = t;
+            }
+        </script>
+    </div>
+    <div style="width:100%;height:50px"></div>
     </div>
     <div id="outer">
-            <ul class="header">
-                <li><img src="head/6.jpg" alt=""></li>
-                <li><img src="head/41.jpg" alt=""></li>
-                <li><img src="head/46.jpg" alt=""></li>
-                <li><img src="head/68.jpg" alt=""></li>
-                <li><img src="head/80.jpg" alt=""></li>
-            </ul>
-            <div id="navDiv">
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
-            </div>
+        <ul class="header">
+            <li><img src="head/6.jpg" alt=""></li>
+            <li><img src="head/41.jpg" alt=""></li>
+            <li><img src="head/46.jpg" alt=""></li>
+            <li><img src="head/68.jpg" alt=""></li>
+            <li><img src="head/80.jpg" alt=""></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
     </div>
-    
+
     <div class="mid1">
         <div class="logo">
             <img src="miku/4.jpg" alt="0">
         </div>
         <div class="menu">
-            <ul><li><a href="p1.html">首页</a></li>
+            <ul>
+                <li><a href="p1.html">首页</a></li>
                 <li><a href="javascript:void(0);" onclick="aboutme()">关于我</a></li>
                 <li><a href="music.html">音乐</a></li>
                 <li><a href="pic.html">相册</a></li>
                 <li><a href="#">心情</a></li>
-                <li><a href="#">留言</a></li></ul>
+                <li><a href="#">留言</a></li>
+            </ul>
         </div>
-            <div class="rtitle">
-                <div class="knowme">
-                    <h3>认识我</h3>
-                </div>
-                <div class="gz">
-                    <ul>
-                        <li><a href="#">新浪微博</a></li>
-                        <li><a href="#">腾讯微博</a></li>
-                    <li><a href="javascript:void(0);" onclick="qq()">QQ</a></li>
-                    </ul>
-                </div>
+        <div class="rtitle">
+            <div class="knowme">
+                <h3>认识我</h3>
             </div>
+            <div class="gz">
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">腾讯微博</a></li>
+                    <li><a href="javascript:void(0);" onclick="qq()">QQ</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div id="login">
         <div class="bt">
@@ -314,47 +324,48 @@ background-image: url("miku/riv.png");
         </div>
         <div class="tab">
             <legend align="center">注册信息</legend>
-    <form align="left" action='p1.html' method="POST">
-        <table>
-            <tr>
-                <td>用户名:</td>
-                <td><input type="text" id="name" onblur="checkname()"></td>
-                <td id="e1" style="text-align: left"></td>
-            </tr>
-            <tr>
-                <td>密码:</td>
-                <td><input type="password" name="password" id="password" onblur="checkpwd()"></td>
-                <td id="e2" style="text-align: left"></td>
-            </tr>
-            <tr>
-                <td>确认密码:</td>
-                <td><input type="password" name="password2" id="password2" onblur="compare();"></td>
-                <td id="e3" style="text-align: left"></td>
-            </tr>
-        </table>
-            <p>性别:
-                <input name="xb" type="radio" checked value="男">男
-                <input name="xb" type="radio" value="女">女
+            <form align="left" action='p1.html' method="POST">
                 <table>
                     <tr>
-                        <td>出生日期:</td>
-                        <td><input type="text" id="birthday" onblur="checkbirth()"></td>
-                        <td id="e4" style="text-align: left"></td>
+                        <td>用户名:</td>
+                        <td><input type="text" id="name" onblur="checkname()"></td>
+                        <td id="e1" style="text-align: left"></td>
                     </tr>
                     <tr>
-                        <td>邮箱:</td>
-                        <td><input type="text" name="password" id="mail" onblur="checkmail()"></td>
-                        <td id="e5" style="text-align: left"></td>
+                        <td>密码:</td>
+                        <td><input type="password" name="password" id="password" onblur="checkpwd()"></td>
+                        <td id="e2" style="text-align: left"></td>
                     </tr>
                     <tr>
-                        <td>手机号码:</td>
-                        <td><input type="text" name="password2" id="phone" onblur="checkphone();"></td>
-                        <td id="e6" style="text-align: left"></td>
+                        <td>确认密码:</td>
+                        <td><input type="password" name="password2" id="password2" onblur="compare();"></td>
+                        <td id="e3" style="text-align: left"></td>
                     </tr>
                 </table>
-        <p><input type="submit" value="提交"/>
-            <input type="reset" value="重填"/>
+                <p>性别:
+                    <input name="xb" type="radio" checked value="男">男
+                    <input name="xb" type="radio" value="女">女
+                    <table>
+                        <tr>
+                            <td>出生日期:</td>
+                            <td><input type="text" id="birthday" onblur="checkbirth()"></td>
+                            <td id="e4" style="text-align: left"></td>
+                        </tr>
+                        <tr>
+                            <td>邮箱:</td>
+                            <td><input type="text" name="password" id="mail" onblur="checkmail()"></td>
+                            <td id="e5" style="text-align: left"></td>
+                        </tr>
+                        <tr>
+                            <td>手机号码:</td>
+                            <td><input type="text" name="password2" id="phone" onblur="checkphone();"></td>
+                            <td id="e6" style="text-align: left"></td>
+                        </tr>
+                    </table>
+                    <p><input type="submit" value="提交" />
+                        <input type="reset" value="重填" />
         </div>
     </div>
 </body>
+
 </html>

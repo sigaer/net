@@ -1,220 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-    html,body{
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
-    body{
-        background-image:url("bg/1.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed
-    }
-    *{
-        margin:5;
-        padding:0;
-    }
-    .header{
-        background-image:url("miku/6.jpg");
-        background-repeat: no-repeat;
-        background-size: 80% 100px;
-        margin-top:0;
-        margin-left: 10%;
-        margin-right: 100px;
-        width:100%;
-        height: 100px;
-    }
-    .logo{
-        margin-left: 125px;
-        margin-top:30px;
-        float:left;
-    }
-    .logo img{
-        width:120px;
-        height:120px;
-    }
-    .rtitle{
-        text-align: center;
-        float:right;
-        width:200px;
-        height: 40px;
-    }
-    .gz{
-        list-style: none;
-        background-color:#DCDCDC;
-    }
-    .gz ul li{
-        list-style: none;
-        float:left;
-        padding: 5px;
-    }
-    .gz a{
-        text-decoration: none;
-    }
-    .gz a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .gz:after {                                            
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-    .knowme{
-        border-bottom:#CCC 1px solid;
-    }
-    .menu{
-        margin-left:575px;
-        margin-top:10px;
-        padding:5px;
-        height: 50px;
-    }
-    .menu ul li{
-        border: 1px solid red;
-        float:left;
-        list-style: none;
-        font-size: 20px;
-        border-radius:25px;
-        text-align: center;
-        padding: 5px;
-        background: #eee;
-    }
-    .menu ul li a{
-        text-decoration: none;
-        color:darkgreen;
-    }
-    .menu a:hover{
-        text-decoration: underline;
-        background: #f2cdb0;
-        color:#f00;
-    }
-    .menu:after {                                            
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
 
-    
-    .lis{
-        list-style: none;
-        float:left;
-        margin-top:0;
-        margin-left:125px;
-        width: 120px;
-        background-color:#DCDCDC;
-    }
-    .lis ul li{
-        list-style: none;
-    }
-    .lis a{
-        text-decoration: none;
-    }
-    .lis a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .center{
-        border:1px solid pink;
-        margin-right: 275px;
-        margin-left: 125px;
-        margin-top:25px;
-        background-color: #fff;
-        height:470px;
-    }
-    .title{
-        margin:0;
-        border:1px solid red;
-        text-align: center;
-        height: 70px;
-    }
-    .mid1{
-        margin:5;
-        height:200px;
-    }
-    .right{
-        float:right;
-        margin-top:0px;
-        margin-right:45px;
-        width:200px;
-        background-color: #CCC;
-    }
-    .xtitle{
-        margin:0;
-        text-align: center;
-        height: 30px;
-    }
-    .right ul li{
-        list-style: none;
-        font-size: 15px;
-        text-align: left;
-        padding: 5px;
-        margin-left: 5px;
-        border-bottom:#CCC 1px solid;
-    }
-    .right ul li a{
-        text-decoration: none;
-    }
-    .right a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .news{
-        overflow: scroll;
-        background-color: #fff;
-        height:400px;
-        margin-bottom: 0px;
-    }
-    .news ul li{
-        list-style: none;
-        font-size: 15px;
-        text-align: left;
-        padding: 5px;
-        margin-left: 50px;
-        margin-right: 50px;
-        border-bottom:#CCC 1px solid;
-    }
-    .news ul li a{
-        text-decoration: none;
-    }
-    .news a:hover{
-        text-decoration: underline;
-        color:red;
-    }
-    .news:after {                                            
-				content: "";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
+        body {
+            background-image: url("bg/1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed
+        }
+
+        * {
+            margin: 5;
+            padding: 0;
+        }
+
+        .header {
+            background-image: url("miku/6.jpg");
+            background-repeat: no-repeat;
+            background-size: 80% 100px;
+            margin-top: 0;
+            margin-left: 10%;
+            margin-right: 100px;
+            width: 100%;
+            height: 100px;
+        }
+
+        .logo {
+            margin-left: 125px;
+            margin-top: 30px;
+            float: left;
+        }
+
+        .logo img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .rtitle {
+            text-align: center;
+            float: right;
+            width: 200px;
+            height: 40px;
+        }
+
+        .gz {
+            list-style: none;
+            background-color: #DCDCDC;
+        }
+
+        .gz ul li {
+            list-style: none;
+            float: left;
+            padding: 5px;
+        }
+
+        .gz a {
+            text-decoration: none;
+        }
+
+        .gz a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .gz:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .knowme {
+            border-bottom: #CCC 1px solid;
+        }
+
+        .menu {
+            margin-left: 575px;
+            margin-top: 10px;
+            padding: 5px;
+            height: 50px;
+        }
+
+        .menu ul li {
+            border: 1px solid red;
+            float: left;
+            list-style: none;
+            font-size: 20px;
+            border-radius: 25px;
+            text-align: center;
+            padding: 5px;
+            background: #eee;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: darkgreen;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+            background: #f2cdb0;
+            color: #f00;
+        }
+
+        .menu:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+
+        .lis {
+            list-style: none;
+            float: left;
+            margin-top: 0;
+            margin-left: 125px;
+            width: 120px;
+            background-color: #DCDCDC;
+        }
+
+        .lis ul li {
+            list-style: none;
+        }
+
+        .lis a {
+            text-decoration: none;
+        }
+
+        .lis a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .center {
+            border: 1px solid pink;
+            margin-right: 275px;
+            margin-left: 125px;
+            margin-top: 25px;
+            background-color: #fff;
+            height: 470px;
+        }
+
+        .title {
+            margin: 0;
+            border: 1px solid red;
+            text-align: center;
+            height: 70px;
+        }
+
+        .mid1 {
+            margin: 5;
+            height: 200px;
+        }
+
+        .right {
+            float: right;
+            margin-top: 0px;
+            margin-right: 45px;
+            width: 200px;
+            background-color: #CCC;
+        }
+
+        .xtitle {
+            margin: 0;
+            text-align: center;
+            height: 30px;
+        }
+
+        .right ul li {
+            list-style: none;
+            font-size: 15px;
+            text-align: left;
+            padding: 5px;
+            margin-left: 5px;
+            border-bottom: #CCC 1px solid;
+        }
+
+        .right ul li a {
+            text-decoration: none;
+        }
+
+        .right a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .news {
+            overflow: scroll;
+            background-color: #fff;
+            height: 400px;
+            margin-bottom: 0px;
+        }
+
+        .news ul li {
+            list-style: none;
+            font-size: 15px;
+            text-align: left;
+            padding: 5px;
+            margin-left: 50px;
+            margin-right: 50px;
+            border-bottom: #CCC 1px solid;
+        }
+
+        .news ul li a {
+            text-decoration: none;
+        }
+
+        .news a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        .news:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
     </style>
-     <script>
-        function aboutme(){
+    <script>
+        function aboutme() {
             alert("这里是关于我的内容");
         }
     </script>
 </head>
+
 <body>
     <div class="header">
         <h1>Vocaloid小站</h1>
     </div>
     <div class="menu">
-        <ul><li><a href="p1.html">首页</a></li>
+        <ul>
+            <li><a href="p1.html">首页</a></li>
             <li><a href="javascript:void(0);" onclick="aboutme()">关于我</a></li>
             <li><a href="music.html">音乐</a></li>
             <li><a href="pic.html">相册</a></li>
             <li><a href="#">心情</a></li>
-            <li><a href="#">留言</a></li></ul>
+            <li><a href="#">留言</a></li>
+        </ul>
     </div>
     <div class=right>
         <div class=xtitle>
@@ -257,15 +296,18 @@
         <div class=title>
             <h4>メルト</h4>
         </div>
-       <div class="news">
-        <ul>
-            <li>
-                <img src="./music/melt.jpg" alt="">
-                <audio src="./music/メルト (Melt) (10th ANNIVERSARY MIX).mp3" controls="controls"></audio>
-            </li>
-        </ul>
-       </div>
+        <div class="news">
+            <ul>
+                <li>
+                    <img src="./music/melt.jpg" alt="">
+                    <audio
+                        src="http://m10.music.126.net/20210107224913/69e7b187887a10bce0e66749a2446ef3/ymusic/96cb/53d5/205f/30ec106970886c973ceb2b2aeaac6749.mp3"
+                        controls="controls"></audio>
+                </li>
+            </ul>
+        </div>
     </div>
-    
+
 </body>
+
 </html>

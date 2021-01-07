@@ -1,17 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Document</title>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>LRC</title>
+    <script src="jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <style>
+        div {
+            width: 340px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        ul {
+            transition-duration: 600ms;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li.on {
+            color: red;
+        }
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 16px;
+            line-height: 16px;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        audio {
+            margin-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <a href="show.html#id=1">
-        <button>跳转1?</button>
-    </a>
-    <a href="show.html#id=2">
-        <button>跳转2?</button>
-    </a>
+    <div>
+        <ul id="lrclist" style="transform: translateY(250px);">
+            <!-- 保证歌词在正中间 -->
+
+        </ul>
+    </div>
+    <audio id="audio" src="./music/初音ミク - 千本桜 (千本樱)_MP3.mp3" controls="controls" autoplay="true"></audio>
+
+    <script>
+        var lrcJSON = {
+            "[00:32.430]": "大胆不敌(だいたんふてき)に ハイカラ革命(かくめい)",
+            "[00:35.680]": "磊々落々(らいらいらくらく) 反戦(はんせん)国家(こっか)",
+            "[00:38.710]": "日(ひ)の丸(まる)印(じろし)の 二轮车(にりんしゃ)転(ころ)がし",
+            "[00:41.960]": "悪霊退散(あくりょうたいさん) ICBM",
+            "[00:45.900]": "環状線(かんじょうせん)を 走(はし)り抜(ぬ)けて",
+            "[00:48.200]": "東奔西走(とうほんせいそう)なんのその",
+            "[00:51.150]": "少年少女(しょうねんしょうじょ) 戦国无双(せんごくむそう)",
+            "[00:54.100]": "浮世(うきよ)の随(まにま)に",
+            "[00:57.240]": "千本桜(せんぼんざくら) 夜(よる)ニ纷(まぎ)レ",
+            "[01:00.210]": "君(きみ)ノ声(こえ)モ届(とど)カナイヨ",
+            "[01:03.210]": "此処(ここ)は宴(うたげ) 鋼(はがね)の槛(おり)",
+            "[01:06.480]": "その断頭台(だんとうだい)で见下(みお)ろして",
+            "[01:09.820]": "三千世界(さんぜんせかい) 常世之闇(とこよのやみ)",
+            "[01:12.690]": "嘆(なげ)ク呗(うた)モ闻(き)コエナイヨ",
+            "[01:15.770]": "青藍(せいらん)の空(そら) 遥(はる)か彼方(かなた)",
+            "[01:18.850]": "その光線銃(こうせんじゅう)で 打(う)ち抜(ぬ)いて",
+            "[01:34.670]": "百戦錬磨(ひゃくせんれんま)の见(み)た目(め)は将校(しょうこう)",
+            "[01:37.930]": "いったりきたりの花魁(おいらん)道中(どうちゅう)",
+            "[01:41.900]": "アイツもコイツも皆(みな)で集(あつ)まれ",
+            "[01:44.100]": "圣者(せいじゃ)の行进(こうしん) わんっ つー さん しっ",
+            "[01:47.420]": "禅定门(ぜんじょうもん)を潜(くぐ)り抜(ぬ)けて",
+            "[01:50.320]": "安楽(あんらく)浄土(じょうど)厄払(やくばら)い",
+            "[01:53.450]": "きっと终幕(さいご)は大団円(だいだんえん) ",
+            "[01:56.350]": "拍手(はくしゅ)の合间(あいま)に",
+            "[01:59.680]": "千本桜(せんぼんざくら) 夜(よる)ニ纷(まぎ)レ",
+            "[02:02.580]": "君(きみ)ノ声(こえ)モ届(とど)カナイヨ",
+            "[02:05.650]": "此処(ここ)は宴(うたげ) 鋼(はがね)の槛(おり)",
+            "[02:08.790]": "その断頭台(だんとうだい)で见下(みお)ろして",
+            "[02:12.500]": "三千世界(さんぜんせかい) 常世之闇(とこよのやみ)",
+            "[02:14.970]": "嘆(なげ)ク呗(うた)モ闻(き)コエナイヨ",
+            "[02:18.130]": "希望(きぼう)の丘(おか) 遥(はる)か彼方(かなた)",
+            "[02:21.250]": "その闪光弾(せんこうだん)を打(ぶ)ち上(あ)げろ",
+            "[02:35.950]": "*主演：初音ミク*",
+            "[02:55.770]": "環状線(かんじょうせん)を 走(はし)り抜(ぬ)けて",
+            "[02:58.900]": "東奔西走(とうほんせいそう)なんのその",
+            "[03:02.700]": "少年少女(しょうねんしょうじょ) 戦国无双(せんごくむそう)",
+            "[03:05.400]": "浮世(うきよ)の随(まにま)に",
+            "[03:08.120]": "千本桜(せんぼんざくら) 夜(よる)ニ纷(まぎ)レ",
+            "[03:11.900]": "君(きみ)ノ声(こえ)モ届(とど)カナイヨ",
+            "[03:14.130]": "此処(ここ)は宴(うたげ) 鋼(はがね)の槛(おり)",
+            "[03:17.260]": "その断頭台(だんとうだい)を飛び降(お)りて",
+            "[03:20.680]": "千本桜(せんぼんざくら) 夜(よる)ニ纷(まぎ)レ",
+            "[03:23.450]": "君(きみ)が歌(うた)い僕(ぼく)は踊(おど)る",
+            "[03:26.610]": "此処(ここ)は宴(うたげ) 鋼(はがね)の槛(おり)",
+            "[03:29.710]": "さあ光線銃(こうせんじゅう)を打ちまくれ"
+        };
+        var lrcTime = []; //歌词对应的时间数组
+        var ul = $("#lrclist")[0]; //获取ul
+        var i = 0;
+        $.each(lrcJSON, function (key, value) { //遍历lrc
+            lrcTime[i++] = parseFloat(key.substr(1, 3)) * 60 + parseFloat(key.substring(4,
+                10)); //00:00.000转化为00.000格式
+            ul.innerHTML += "<li><p>" + lrcJSON[key] + "</p></li>"; //ul里填充歌词
+        });
+        lrcTime[lrcTime.length] = lrcTime[lrcTime.length - 1] + 3; //如不另加一个结束时间，到最后歌词滚动不到最后一句
+
+
+        var $li = $("#lrclist>li"); //获取所有li
+
+        var currentLine = 0; //当前播放到哪一句了
+        var currentTime; //当前播放的时间
+        var audio = document.getElementById("audio");
+        var ppxx; //保存ul的translateY值
+
+        audio.ontimeupdate = function () { //audio时间改变事件
+            currentTime = audio.currentTime;
+            for (j = currentLine, len = lrcTime.length; j < len; j++) {
+                if (currentTime < lrcTime[j + 1] && currentTime > lrcTime[j]) {
+                    currentLine = j;
+                    ppxx = 250 - (currentLine * 32);
+                    ul.style.transform = "translateY(" + ppxx + "px)";
+                    $li.get(currentLine - 1).className = "";
+                    console.log("on" + currentLine);
+                    $li.get(currentLine).className = "on";
+                    break;
+                }
+            }
+        };
+
+        audio.onseeked = function () { //audio进度更改后事件
+            currentTime = audio.currentTime;
+            console.log("  off" + currentLine);
+            $li.get(currentLine).className = "";
+            for (k = 0, len = lrcTime.length; k < len; k++) {
+                if (currentTime < lrcTime[k + 1] && currentTime < lrcTime[k]) {
+                    currentLine = k;
+                    break;
+                }
+            }
+        };
+    </script>
 </body>
+
 </html>

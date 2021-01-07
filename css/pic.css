@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-image: url("miku/6.jpg");
+    background-repeat: no-repeat;
+    background-size: 80% 100px;
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 100px;
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    margin-left: 125px;
+    margin-top: 30px;
+    float: left;
+}
+
+.logo img {
+    width: 120px;
+    height: 120px;
+}
+
+.rtitle {
+    text-align: center;
+    float: right;
+    width: 200px;
+    height: 40px;
+}
+
+.gz {
+    list-style: none;
+    background-color: #DCDCDC;
+}
+
+.gz ul li {
+    list-style: none;
+    float: left;
+    padding: 5px;
+}
+
+.gz a {
+    text-decoration: none;
+}
+
+.gz a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.gz:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.knowme {
+    border-bottom: #CCC 1px solid;
+}
+
+.menu {
+    margin-left: 575px;
+    margin-top: 10px;
+    padding: 5px;
+    height: 50px;
+}
+
+.menu ul li {
+    border: 1px solid red;
+    float: left;
+    list-style: none;
+    font-size: 20px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px;
+    background: #eee;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    background: #f2cdb0;
+    color: #f00;
+}
+
+.menu:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+.lis {
+    list-style: none;
+    float: left;
+    margin-top: 0;
+    margin-left: 125px;
+    width: 120px;
+    background-color: #DCDCDC;
+}
+
+.lis ul li {
+    list-style: none;
+}
+
+.lis a {
+    text-decoration: none;
+}
+
+.lis a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.center {
+    border: 1px solid pink;
+    margin-right: 275px;
+    margin-left: 125px;
+    margin-top: 25px;
+    background-color: #fff;
+    height: 470px;
+}
+
+.charc {
+    height: 50px;
+    margin-left: 50px;
+}
+
+.charc a {
+    text-decoration: none;
+}
+
+.charc a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.charc ul li {
+    list-style: none;
+    float: left;
+    margin-left: 100px;
+}
+
+.charc:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.title {
+    margin: 0;
+    border: 1px solid red;
+    text-align: center;
+    height: 70px;
+}
+
+.mid1 {
+    margin: 5;
+    height: 200px;
+}
+
+.right {
+    float: right;
+    margin-top: 0px;
+    margin-right: 45px;
+    width: 200px;
+    background-color: #CCC;
+}
+
+.xtitle {
+    margin: 0;
+    text-align: center;
+    height: 30px;
+}
+
+.right ul li {
+    list-style: none;
+    font-size: 15px;
+    text-align: left;
+    padding: 5px;
+    margin-left: 5px;
+    border-bottom: #CCC 1px solid;
+}
+
+.right ul li a {
+    text-decoration: none;
+}
+
+.right a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.pic {
+    overflow: scroll;
+    background-color: #fff;
+    height: 400px;
+    margin-bottom: 0px;
+}
+
+.pic ul li {
+    float: left;
+    list-style: none;
+    font-size: 15px;
+    text-align: left;
+    padding: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-bottom: #CCC 1px solid;
+}
+
+.pic ul li img {
+    height: 200px;
+    width: 250px;
+}
+
+.pic ul li a {
+    text-decoration: none;
+    margin-left: 106px;
+}
+
+.pic a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.pic:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.header {
+    background-image: url("../miku//6.jpg");
+    background-repeat: no-repeat;
+    background-size: 80% 100px;
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 100px;
+    width: 100%;
+    height: 100px;
+}
+
+#head {
+    width: 100%;
+    background-color: #000000;
+    height: 40px;
+}
+
+#head a {
+    color: white;
+    text-decoration: none;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

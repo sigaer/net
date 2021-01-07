@@ -3,6 +3,18 @@
         <a href="register.html">注册</a>
         <a href="note.html" hidden="hidden">待办事项</a>
         <a href="#" hidden="hidden" onclick=logout()>登出</a>
+        <p id="time" style="position: fixed;z-index: 2;color:#ffffff"></p>
+        <script>
+            var myVar = setInterval(function () {
+                myTimer()
+            }, 1000);
+
+            function myTimer() {
+                var d = new Date();
+                var t = d.toLocaleTimeString();
+                document.getElementById("time").innerHTML = t;
+            }
+        </script>
     </div>
     <div id="outer">
             <ul class="header">
@@ -67,34 +79,19 @@
         </div>
         <ul>
             <li>
-                <a href="news.html?d=0">资讯1</a>
+                <a href="#id=1">什么是vocaloid?</a>
             </li>
             <li>
-                <a href="news.html?d=1">资讯2</a>
+                <a href="#id=2">vocaloid的发展历程</a>
             </li>
             <li>
-                <a href="news.html?d=2">资讯3</a>
+                <a href="news.html?d=2&title=vocaloidP主介绍">vocaloidP主介绍</a>
             </li>
             <li>
-                <a href="news.html?d=3">资讯4</a>
+                <a href="news.html?d=3&title=vocaloid名曲推荐">vocaloid名曲推荐</a>
             </li>
             <li>
-                <a href="news.html?d=4">资讯5</a>
-            </li>
-            <li>
-                <a href="news.html?d=5">资讯6</a>
-            </li>
-            <li>
-                <a href="news.html?d=6">资讯7</a>
-            </li>
-            <li>
-                <a href="news.html?d=7">资讯8</a>
-            </li>
-            <li>
-                <a href="news.html?d=8">资讯9</a>
-            </li>
-            <li>
-                <a href="news.html?d=9">资讯10</a>
+                <a href="#id=5">vocaloid参数介绍</a>
             </li>
         </ul>
     </div>
@@ -104,4 +101,5 @@
         </div>
        <div class="news" id="c">
        :content
+       </div>
     </div>
